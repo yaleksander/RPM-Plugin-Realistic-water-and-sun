@@ -90,8 +90,9 @@ class Water extends THREE.Mesh {
 					mirrorCoord = modelMatrix * vec4( position, 1.0 );
 					worldPosition = mirrorCoord.xyzw;
 					mirrorCoord = textureMatrix * mirrorCoord;
-					vec4 mvPosition =  modelViewMatrix * vec4( position, 1.0 );
-					gl_Position = projectionMatrix * mvPosition;
+
+				#include <begin_vertex>
+				#include <project_vertex>
 
 				#include <beginnormal_vertex>
 				#include <defaultnormal_vertex>
@@ -171,6 +172,7 @@ class Water extends THREE.Mesh {
 
 					#include <tonemapping_fragment>
 //					#include <colorspace_fragment>
+					gl_FragColor = linearToOutputTexel( gl_FragColor );
 					#include <fog_fragment>	
 				}`
 
