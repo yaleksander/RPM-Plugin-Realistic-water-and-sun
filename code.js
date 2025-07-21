@@ -70,10 +70,6 @@ RPM.Manager.Plugins.registerCommand(pluginName, "Initialize sky", () =>
 		sky.scale.setScalar(new THREE.Vector3(m, m, m).length() * 2 * RPM.Datas.Systems.SQUARE_SIZE);
 		sky.position.set(p.length * RPM.Datas.Systems.SQUARE_SIZE / 2, 0, p.width * RPM.Datas.Systems.SQUARE_SIZE / 2.0);
 		const skyUniforms = sky.material.uniforms;
-		skyUniforms["turbidity"].value = 10;
-		skyUniforms["rayleigh"].value = 2;
-		skyUniforms["mieCoefficient"].value = 0.05;
-		skyUniforms["mieDirectionalG"].value = 0.4;
 		RPM.Scene.Map.current.scene.add(sky);
 	}
 });
