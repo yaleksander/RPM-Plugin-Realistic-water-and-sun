@@ -46,7 +46,7 @@ Sky.SkyShader = {
 		'rayleigh': { value: 1 },
 		'mieCoefficient': { value: 0.005 },
 		'mieDirectionalG': { value: 0.8 },
-		'sunPosition': { value: new THREE.Vector3() },
+		'sunPosition': { value: (new THREE.Vector3(-1, 0.25, 1)).normalize() },
 		'up': { value: new THREE.Vector3( 0, 1, 0 ) }
 	},
 
